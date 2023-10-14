@@ -10,7 +10,7 @@ if (game.VIPServerId ~=  "" and game.VIPServerOwnerId == 0) then
 
 	Players.PlayerAdded:Connect(function(player)
 		UpdateImage.Visible = true --> Display update image
-		wait(waitTime)
+		task.wait(waitTime)
 		waitTime = waitTime / 2
 		TeleportService:Teleport(game.PlaceId, player,nil,UpdateImage )
 	end)
@@ -18,7 +18,7 @@ if (game.VIPServerId ~=  "" and game.VIPServerOwnerId == 0) then
 	for _, player in pairs(game.Players:GetPlayers()) do
 		UpdateImage.Visible = true --> Display update image
 		TeleportService:Teleport(game.PlaceId, player)
-		wait(waitTime)
+		task.wait(waitTime)
 		waitTime = waitTime / 2
 	end
 
@@ -34,7 +34,7 @@ else
 		end
 
 		UpdateImage.Visible = false --Display cannot be seen
-		wait(2)
+		task.wait(2)
 		local ReservedServerCode = TeleportService:ReserveServer(game.PlaceId)
 		--This is a reserved server where players wait to get back to the game.
 		for _, player in pairs(game.Players:GetPlayers() ) do
@@ -48,7 +48,7 @@ else
 		end)
 
 		while (#Players:GetPlayers() > 0 ) do
-			wait(1)
+			task.wait(1)
 		end
 
 		--done
