@@ -1,7 +1,5 @@
 local ServerHandler = {}
 
-
-sd
 function ServerHandler.DATAHANDLER()
     ----[SERVICES]
 local DataStorage = game:GetService("DataStoreService")
