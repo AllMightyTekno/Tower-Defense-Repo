@@ -2,6 +2,7 @@ local Players = game:GetService("Players")
 local player = game.Players.LocalPlayer
 local playerMouse = player:GetMouse()
 local Target = playerMouse.Target
+
 local Highlight = Instance.new("Highlight")
 
 ---When the RopeTool is put on by the client
