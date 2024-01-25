@@ -22,7 +22,7 @@ print(loggedInUsrName)
 
 ---//Functions/Processes 
 for _, object in pairs(SelectedObjects) do
-    
+
     local frame = object
     local initialSize = frame.Size
 
