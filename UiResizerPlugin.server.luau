@@ -5,8 +5,8 @@ local Selection = game:GetService("Selection")
 local UserInputService = game:GetService("UserInputService")
 
 --//Variables
-local loggedInUsrId = StudioService:GetUserId() 
-local loggedInUsrName = Players:GetNameFromUserIdAsync(loggedInUsrId)
+local loggedInUsrId = StudioService:GetUserId() --UsrId who is logged in Studio 
+local loggedInUsrName = Players:GetNameFromUserIdAsync(loggedInUsrId) --Name of the the usr logged in studio
 local SelectedObjects = Selection:Get() --Get's an array of selected instances in roblox studio
 
 local toolbar = plugin:CreateToolbar("ResizeMe")
@@ -15,16 +15,18 @@ local PluginButton = toolbar:CreateButton("ResizeMe","ResizeIcon","rbxassetId://
 
 PluginButton.ClickableWhenViewportHidden = true
 
----////CHECKS
+---////CHECKS IF ALL CONNECTIONS ARE WORKING
 print(loggedInUsrId)
 print(loggedInUsrName)
 ---////CHECKS
 
 
 ---//Functions/Processes                    
-for _, object in ipairs(SelectedObjects) do
+
+
+for _, object in ipairs(SelectedObjects) do --Loops through all the Objects gotten under the selectObjects Variable 
  
-    if object:IsA("Frame") then
+    if object:IsA("Frame") then --Checks if the selected object is a frame
        local obj = object
 
         local initialSize = obj.Size
@@ -34,8 +36,7 @@ local function updateFrameSize(input)
 
     -- Update the frame size based on mouse movements
     obj.Size = UDim2.new(initialSize.X.Scale, initialSize.X.Offset + mouseDelta.X, 
-                           initialSize.Y.Scale, initialSize.Y.Offset + mouseDelta.Y,
-                           initialSize.Z.Scale, initialSize.Z.Offset + mouseDelta.Z)
+                           initialSize.Y.Scale, initialSize.Y.Offset + mouseDelta.Y)
 end
 
 
