@@ -6,7 +6,12 @@ Revised by c0balt60
 
 ## Getting started
 
+> You'll get started once it actually works...
+
 ## Utilization
+
+> You'll use it somehow...
+> Let me figure out why
 
 ## Documentation
 
