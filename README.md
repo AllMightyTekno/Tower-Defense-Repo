@@ -27,3 +27,5 @@ mob:Spawn()     --> Spawns the mob at the start of the map
 ```
 
 ## Updates
+
+> Version (**BETA**) 0.1
